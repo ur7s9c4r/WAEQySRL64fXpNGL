@@ -23,18 +23,25 @@
 然后是环境:  
 ```
 安装tor
+-----------
+参考https://2019.www.torproject.org/docs/debian.html.en
+-----------
 在/etc/apt/sources中添加
 deb https://deb.torproject.org/torproject.org stretch main
 deb-src https://deb.torproject.org/torproject.org stretch main
-配置/etc/tor/torrc
-ControlPort 9051
-CookieAuthentication 1
+
 
 运行
 curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 apt update
 apt install tor deb.torproject.org-keyring -y
+配置/etc/tor/torrc
+ControlPort 9051
+CookieAuthentication 1
+
+systemctl restart tor
+
 
 安装python
 apt install python-pip -y
