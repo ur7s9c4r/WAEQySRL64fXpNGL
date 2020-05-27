@@ -22,7 +22,23 @@
 首先是你灵巧的双手  
 然后是环境:  
 ```
-pip install stem pySocket requests beautifulsoup4
+安装tor
+在/etc/apt/sources中添加
+deb https://deb.torproject.org/torproject.org stretch main
+deb-src https://deb.torproject.org/torproject.org stretch main
+配置/etc/tor/torrc
+ControlPort 9051
+CookieAuthentication 1
+
+运行
+curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
+gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
+apt update
+apt install tor deb.torproject.org-keyring -y
+
+安装python
+apt install python-pip -y
+pip install PsSocks stem pySocket requests beautifulsoup4
 ```
 ~~requirements.txt~~  
 ~~requirements 这辈子都没有的~~  
