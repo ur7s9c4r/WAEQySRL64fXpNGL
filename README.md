@@ -45,7 +45,7 @@ systemctl restart tor
 
 安装python
 apt install python-pip -y
-pip install PsSocks stem pySocket requests beautifulsoup4
+pip install PySocks stem pySocket requests beautifulsoup4
 ```
 ~~requirements.txt~~  
 ~~requirements 这辈子都没有的~~  
